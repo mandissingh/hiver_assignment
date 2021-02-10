@@ -1,6 +1,6 @@
 import boto3
 
-client = boto3.client('ec2')
+client = boto3.client('ec2',region_name = 'us-east-1')
 response_vpc = client.describe_vpcs()
 for r in response_vpc['Vpcs']:
     if(r['IsDefault']):
